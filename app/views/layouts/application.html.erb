@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flightscraper</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <aside id='global-nav'>
+      <header>
+        <!-- <img src="http://icons.iconarchive.com/icons/double-j-design/apple-festival/256/app-camera-icon.png" alt=""> -->
+        <h3><a href="/">Gellerü</a></h3>
+        <ul>
+          <li><a href="/base_routes">Base Routes</a></li>
+          <li><a href="/strikes">Strikes</a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </header>
+      <nav>
+        
+      </nav>
+      
+      
+    </aside>
+    <div id="container" class='row'>
+      <%= yield %>
+    </div>
+    
+
+    
+  </body>
+</html>
