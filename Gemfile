@@ -27,6 +27,7 @@ group :production do
 end
 
 gem 'money'
+gem 'google_currency'
 gem 'simple_form', '>= 3.0.0.rc'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'bourbon'

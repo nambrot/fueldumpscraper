@@ -1,4 +1,7 @@
 # coding: utf-8
+
+require 'money/bank/google_currency'
+
 class KayakScraper < Scraper
 
   def initialize(locale = 'com')
@@ -18,8 +21,9 @@ class KayakScraper < Scraper
     browser.div(:id => "progressDiv"  ).wait_while_present(60)
     
     Money.assume_from_symbol = true
+    Money.default_bank = Money::Bank::GoogleCurrency.new
 
-    price = Money.parse browser.element(:css => '.flightresult .results_price').text
+    price, number, currency = parse_price browser.element(:css => '.flightresult .results_price').text
     
     browser.quit
 
@@ -37,7 +41,9 @@ class KayakScraper < Scraper
     # browser.div(:id => "progressDiv").wait_until_present
     browser.div(:id => "progressDiv"  ).wait_while_present(60)
     
-    price = Money.parse browser.element(:css => '.flightresult .results_price').text
+    Money.assume_from_symbol = true
+    Money.default_bank = Money::Bank::GoogleCurrency.new  
+    price, number, currency = parse_price browser.element(:css => '.flightresult .results_price').text
     
     browser.quit
 
