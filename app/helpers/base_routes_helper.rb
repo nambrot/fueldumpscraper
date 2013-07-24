@@ -1,0 +1,2 @@
+module BaseRoutesHelper
+end

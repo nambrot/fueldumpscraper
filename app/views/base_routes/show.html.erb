@@ -1,0 +1,63 @@
+<h1><%= @base_route.origin %> - <%= @base_route.destination %></h1>
+
+<% if !@base_route.priced_base_routes.blank? %>
+  <h3>Priced with this base route</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Price</th>
+        <th>Currency</th>
+        <th>OTA</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for priced_base_route in @base_route.priced_base_routes %>
+      <tr>
+        <th><%= priced_base_route.start_date %></th>
+        <th><%= priced_base_route.end_date %></th>
+        <th><%= priced_base_route.price %></th>
+        <th><%= priced_base_route.currency %></th>
+        <td><%= priced_base_route.search_engine.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  
+<% end %>
+
+<% if !@base_route.priced_strike_routes.blank? %>
+  <h3>Priced and striked with this base route</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Strike Date</th>
+        <th>Strike</th>
+        <th>Price</th>
+        <th>Currency</th>
+        <th>OTA</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for priced_strike_route in @base_route.priced_strike_routes %>
+      <tr>
+        <th><%= priced_strike_route.start_date %></th>
+        <th><%= priced_strike_route.end_date %></th>
+        <th><%= priced_strike_route.strike_date %></th>
+        <th><%= priced_strike_route.strike %></th>
+        <th><%= priced_strike_route.price %></th>
+        <th><%= priced_strike_route.currency %></th>
+        <td><%= priced_strike_route.search_engine.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  
+<% end %>
+
+<%= link_to "Schedule new Scrape" , new_base_route_scrape_path(@base_route) %>

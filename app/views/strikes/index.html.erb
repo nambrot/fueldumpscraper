@@ -1,0 +1,10 @@
+<% if !@strikes.blank? %>
+  <h1>Strikes</h1>
+  <% for strike in @strikes %>
+    <li><%= strike.to_s %></li>
+  <% end %>
+<% else %>
+  
+<% end %>
+
+<%= link_to "Add new Strike", new_strike_path %>

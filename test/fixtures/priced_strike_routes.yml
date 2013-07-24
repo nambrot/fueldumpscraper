@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_date: 2013-06-04
+  end_date: 2013-06-04
+  strike_date: 2013-06-04
+  price: 1.5
+  currency: MyString
+  ota: MyString
+  base_route_id: 1
+  strike_id: 1
+
+two:
+  start_date: 2013-06-04
+  end_date: 2013-06-04
+  strike_date: 2013-06-04
+  price: 1.5
+  currency: MyString
+  ota: MyString
+  base_route_id: 1
+  strike_id: 1

@@ -1,0 +1,2 @@
+module OtasHelper
+end

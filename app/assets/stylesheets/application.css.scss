@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ */
+
+@import "bourbon";
+
+
+ #global-nav {
+  position:fixed;
+  height: 100%;
+  width: 200px;
+  
+  padding-top: 5%;
+  text-align: center;
+  box-shadow: 0px 4px 30px;
+  
+  background-color: rgb(23, 17, 66);
+
+  h3, h5 {
+    font-family: HelveticaNeue-Light;
+    font-weight: 200;
+    margin-bottom: 0px;
+    color: rgb(120, 199, 236);
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  nav {
+    text-align: left;
+
+    a {
+      color: white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li {
+      padding: 5px 20px;
+    }
+  }
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height:100%;
+}
+
+body {
+  @include clearfix;
+
+}
+
+#container {
+  @include clearfix;
+  // perspective: 10;
+  padding-left: 220px;
+  width: 100%;
+
+  height: auto !important; /* ie6 ignores !important, so this will be overridden below */
+  min-height: 100%; /* ie6 ignores min-height completely */
+  height: 100%;
+    
+
+  max-width: 100%;
+  background: #ffffff; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  #ffffff 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  #ffffff 0%,#f4f4f4 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  #ffffff 0%,#f4f4f4 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  #ffffff 0%,#f4f4f4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+} //= require foundation_and_overrides

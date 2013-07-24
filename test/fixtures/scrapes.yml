@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  base_route_ids: MyText
+  strike_ids: MyText
+  start_date_string: MyString
+  end_date_string: MyString
+  ota_ids: MyText
+
+two:
+  base_route_ids: MyText
+  strike_ids: MyText
+  start_date_string: MyString
+  end_date_string: MyString
+  ota_ids: MyText

@@ -1,0 +1,60 @@
+<% if !@priced_base_routes.blank? %>
+<h1>Priced Base Routes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Base-Pair</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>OTA</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for route in @priced_base_routes %>
+        <tr>
+          <td><%= link_to route.base_route.to_s, base_route_path(route.base_route) %></td>
+          <td><%= route.start_date %></td>
+          <td><%= route.end_date %></td>
+          <td><%= route.search_engine.name %></td>
+          <td><%= route.price_string %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+<% end %>
+
+<% if !@priced_strike_routes.blank? %>
+<h1>Priced Strike Routes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Base-Pair</th>
+        <th>Strike</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Strike Date</th>
+        <th>OTA</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for route in @priced_strike_routes %>
+        <tr>
+          <td><%= link_to route.base_route.to_s, base_route_path(route.base_route) %></td>
+          <td><%= link_to route.strike.to_s, strike_path(route.strike) %></td>
+          <td><%= route.start_date %></td>
+          <td><%= route.end_date %></td>
+          <td><%= route.strike_date %></td>
+          <td><%= route.search_engine.name %></td>
+          <td><%= route.price_string %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  
+<% end %>

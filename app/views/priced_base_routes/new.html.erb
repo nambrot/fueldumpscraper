@@ -1,0 +1,17 @@
+<%= simple_form_for [@base_route, @priced_base_route] do |f| %>
+  <h1>Schedule new Scrape</h1>
+  
+  <h3>Base Route</h3>
+  <h5>Origin</h5>
+  <p><%= @base_route.origin %></p>
+  
+  <h5>Destination </h5>
+  <p><%= @base_route.destination %></p>
+  <%= f.error_notification %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  
+  <%= f.input :ota_id, :collection => Ota.all, :value_method => :name, :label_method => :name, :prompt => "Choose OTA", :as => :check_boxes, :label => "Choose OTA(s)" %>
+  
+  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end %>

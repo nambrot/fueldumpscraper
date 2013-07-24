@@ -1,0 +1,28 @@
+<h1>Base Routes</h1>
+
+<% if !@base_routes.blank? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for base_route in @base_routes %>
+        <tr>
+          <td><%= base_route.origin %></td>
+          <td><%= base_route.destination %></td>
+          <td><%= link_to 'Show', base_route_path(base_route) %></td>
+        </tr>
+        
+      <% end %>
+    </tbody>
+  
+  </table>
+<% else %>
+  
+<% end %>
+
+<%= link_to "New Base Route", new_base_route_path  %>
