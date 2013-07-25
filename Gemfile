@@ -20,9 +20,11 @@ group :development do
   gem 'sqlite3'
   gem 'debugger'
 
-  gem 'capistrano'
-  gem 'rvm-capistrano'
+
 end
+
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :production do
   gem 'memcachier'
