@@ -1,3 +1,6 @@
+require "rvm/capistrano"
+require 'bundler/capistrano'
+
 set :application, "fueldumpscraper"
 set :repository,  "git@github.com:/nambrot/fueldumpscraper"
 set :deploy_to, "/home/fueldump/fueldumpscraper"
