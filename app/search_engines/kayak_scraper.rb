@@ -15,7 +15,7 @@ class KayakScraper < Scraper
     strike_date = strike_date.try :to_date
 
     Headless.ly do
-      browser = Watir::Browser.new :ff
+      browser = Watir::Browser.new
     end
     browser.goto "http://www.kayak.#{@locale}/flights/#{base_route.origin}-#{base_route.destination}/#{start_date.to_s}/#{base_route.destination}-#{base_route.origin}/#{end_date.to_s}/#{strike.origin}-#{strike.destination}/#{strike_date.to_s}"
 
@@ -39,7 +39,7 @@ class KayakScraper < Scraper
     end_date = end_date.try :to_date
 
     Headless.ly do
-      browser = Watir::Browser.new :ff
+      browser = Watir::Browser.new
     end
     browser.goto "http://www.kayak.#{@locale}/flights/#{base_route.origin}-#{base_route.destination}/#{start_date.to_s}/#{end_date.to_s}"
     # browser.div(:id => "progressDiv").wait_until_present
