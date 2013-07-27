@@ -16,6 +16,18 @@ role :app, "bu.cloudapp.net"                          # This may be the same as 
 # role :db,  "bu.cloudapp.net:80", :primary => true # This is where Rails migrations will run
 # role :db,  "bu.cloudapp.net:80"
 
+set :rails_env, "production"
+set :keep_releases, 3
+after "deploy:restart", "deploy:cleanup"
+
+namespace :deploy do
+  desc "Symlink shared/* files"
+    task :symlink_shared, :roles => :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+end
+
+after "deploy:update_code", "deploy:symlink_shared"
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
