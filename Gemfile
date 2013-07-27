@@ -30,7 +30,7 @@ group :production do
   gem 'memcachier'
   gem 'pg'
 end
-
+gem 'headless'
 gem 'daemons'
 gem 'rake'
 gem 'money'

@@ -106,6 +106,7 @@ GEM
       em-websocket (>= 0.5.0)
       guard (>= 1.8.0)
       multi_json (~> 1.7)
+    headless (1.0.1)
     highline (1.6.19)
     hike (1.2.2)
     hirb (0.7.1)
@@ -265,6 +266,7 @@ DEPENDENCIES
   google_currency
   guard
   guard-livereload
+  headless
   hirb
   httparty
   jbuilder (~> 1.0.1)
