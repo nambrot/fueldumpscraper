@@ -30,6 +30,8 @@ group :production do
   gem 'memcachier'
   gem 'pg'
 end
+
+gem 'daemons'
 gem 'rake'
 gem 'money'
 gem 'google_currency'

@@ -1,5 +1,6 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
+require "delayed/recipes"
 
 set :application, "fueldumpscraper"
 set :repository,  "git@github.com:/nambrot/fueldumpscraper"
@@ -29,6 +30,11 @@ namespace :deploy do
 end
 
 after "deploy:update_code", "deploy:symlink_shared"
+
+after "deploy:stop",    "delayed_job:stop"
+after "deploy:start",   "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
