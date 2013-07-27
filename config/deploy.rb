@@ -16,6 +16,7 @@ role :app, "bu.cloudapp.net"                          # This may be the same as 
 # role :db,  "bu.cloudapp.net:80", :primary => true # This is where Rails migrations will run
 # role :db,  "bu.cloudapp.net:80"
 
+set :normalize_asset_timestamps, false
 set :rails_env, "production"
 set :keep_releases, 3
 after "deploy:restart", "deploy:cleanup"
