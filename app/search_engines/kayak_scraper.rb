@@ -14,6 +14,7 @@ class KayakScraper < Scraper
     end_date = end_date.try :to_date
     strike_date = strike_date.try :to_date
 
+    browser = nil
     Headless.ly do
       browser = Watir::Browser.new
     end
@@ -38,6 +39,7 @@ class KayakScraper < Scraper
     start_date = start_date.try :to_date
     end_date = end_date.try :to_date
 
+    browser = nil
     Headless.ly do
       browser = Watir::Browser.new
     end
